@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Konfigurasi dasar untuk memastikan tampilan responsif di semua perangkat -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Konser Cirebon - Kalender Musik | Lia Marganing Rahayu</title>
+    
+    <!-- Memuat Tailwind CSS CDN untuk styling yang cepat dan responsif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Menggunakan font Inter untuk tampilan yang bersih dan profesional */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A; /* Latar belakang dark blue (slate-900) */
+        }
+        /* Custom scrollbar untuk estetika gelap */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4F46E5; /* Warna ungu (indigo-600) */
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-white p-4 sm:p-8">
+
+    <!-- Header Utama Aplikasi -->
+    <header class="text-center mb-12">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-indigo-400 mb-2 tracking-tight">
+            Konser Cirebon 2025/2026
+        </h1>
+        <p class="text-xl text-gray-300">Jadwal Acara Musik Terbaru di Kota Udang</p>
+    </header>
+
+    <!-- Kontainer Utama Daftar Event (Menggunakan Grid Responsif) -->
+    <main id="eventList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        
+        <!-- Kartu Event 1 (BARU): Bestieval Concert Vol 2 (29 Nov 2025) -->
+        <div class="event-card bg-gray-800 rounded-xl overflow-hidden shadow-2xl hover:shadow-indigo-500/50 transition duration-300 transform hover:scale-[1.02]">
+            <!-- Gambar Placeholder -->
+            <img src="https://placehold.co/600x300/1e293b/c7d2fe?text=Bestieval+Concert" alt="Bestieval Concert Vol 2" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h2 class="text-2xl font-bold text-indigo-300">Bestieval Concert Vol 2</h2>
+                    <span class="bg-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase">Jawa </span>
+                </div>
+                
+                <p class="text-gray-400 mb-4">Aksi panggung spektakuler dari NDX AKA dan Aftershine.</p>
+                
+                <!-- Detail Event -->
+                <div class="space-y-2 text-sm">
+                    <p><span class="font-medium text-indigo-400">Tanggal:</span> 29 November 2025</p>
+                    <p><span class="font-medium text-indigo-400">Lokasi:</span> Lapangan Parkir Grage City Mall</p>
+                    <p><span class="font-medium text-indigo-400">Artis:</span> NDX AKA, Aftershine</p>
+                </div>
+
+                <div class="mt-6 flex justify-between items-center border-t border-gray-700 pt-4">
+                    <span class="text-xl font-extrabold text-green-400">Rp 150.000,-</span>
+                    <button onclick="showAlert('Tiket untuk Bestieval Concert Vol 2')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-5 rounded-lg transition duration-150 shadow-md">
+                        Beli Tiket
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kartu Event 2: Kooplay (19 Des 2025) -->
+        <div class="event-card bg-gray-800 rounded-xl overflow-hidden shadow-2xl hover:shadow-indigo-500/50 transition duration-300 transform hover:scale-[1.02]">
+            <!-- Gambar Placeholder (Menggunakan URL placeholder sederhana) -->
+            <img src="https://placehold.co/600x300/1e293b/c7d2fe?text=Kooplay" alt="Kooplay" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h2 class="text-2xl font-bold text-indigo-300">Kooplay</h2>
+                    <span class="bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase">Ambyar</span>
+                </div>
+                
+                <p class="text-gray-400 mb-4">Malam penuh ambyar dengan artis terbaik.</p>
+                
+                <!-- Detail Event -->
+                <div class="space-y-2 text-sm">
+                    <p><span class="font-medium text-indigo-400">Tanggal:</span> 19 Desember 2025</p>
+                    <p><span class="font-medium text-indigo-400">Lokasi:</span> Lapangan Parkir Grage City Mall</p>
+                    <p><span class="font-medium text-indigo-400">Artis:</span> Denny Caknan, Lavora, Damara De.</p>
+                </div>
+
+                <div class="mt-6 flex justify-between items-center border-t border-gray-700 pt-4">
+                    <span class="text-xl font-extrabold text-green-400">Rp 150.000,-</span>
+                    <button onclick="showAlert('Tiket untuk Kooplay')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-5 rounded-lg transition duration-150 shadow-md">
+                        Beli Tiket
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kartu Event 3: SuperMusic (15 Jan 2026) -->
+        <div class="event-card bg-gray-800 rounded-xl overflow-hidden shadow-2xl hover:shadow-indigo-500/50 transition duration-300 transform hover:scale-[1.02]">
+            <img src="https://placehold.co/600x300/1e293b/c7d2fe?text=SuperMusic" alt="SuperMusic" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h2 class="text-2xl font-bold text-indigo-300">SuperMusic</h2>
+                    <span class="bg-yellow-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase">Rock</span>
+                </div>
+                
+                <p class="text-gray-400 mb-4">Malam Full Power diiringi alunan Lagu Rock.</p>
+                
+                <!-- Detail Event -->
+                <div class="space-y-2 text-sm">
+                    <p><span class="font-medium text-indigo-400">Tanggal:</span> 15 Januari 2026</p>
+                    <p><span class="font-medium text-indigo-400">Lokasi:</span> Area Parkir B Csb Mall</p>
+                    <p><span class="font-medium text-indigo-400">Artis:</span> Ronny Parulian</p>
+                </div>
+
+                <div class="mt-6 flex justify-between items-center border-t border-gray-700 pt-4">
+                    <span class="text-xl font-extrabold text-green-400">Rp 85.000,-</span>
+                    <button onclick="showAlert('Tiket untuk SuperMusic')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-5 rounded-lg transition duration-150 shadow-md">
+                        Beli Tiket
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kartu Event 4: Cirebon Concert (10 Feb 2026) -->
+        <div class="event-card bg-gray-800 rounded-xl overflow-hidden shadow-2xl hover:shadow-indigo-500/50 transition duration-300 transform hover:scale-[1.02]">
+            <img src="https://placehold.co/600x300/1e293b/c7d2fe?text=Cirebon Concert" alt="Cirebon Concert" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h2 class="text-2xl font-bold text-indigo-300">Cirebon Concert</h2>
+                    <span class="bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase">Gratis</span>
+                </div>
+                
+                <p class="text-gray-400 mb-4">Perayaan musik Hari Jadi Kabupaten Cirebon.</p>
+                
+                <!-- Detail Event -->
+                <div class="space-y-2 text-sm">
+                    <p><span class="font-medium text-indigo-400">Tanggal:</span> 10 Februari 2026</p>
+                    <p><span class="font-medium text-indigo-400">Lokasi:</span> Stadion Watubelah</p>
+                    <p><span class="font-medium text-indigo-400">Artis:</span> Band Juicy Luicy, Seni Tari Tradisional</p>
+                </div>
+
+                <div class="mt-6 flex justify-between items-center border-t border-gray-700 pt-4">
+                    <span class="text-xl font-extrabold text-green-400">GRATIS</span>
+                    <button onclick="showAlert('Acara ini gratis, silakan datang!')" class="bg-transparent border border-green-400 hover:bg-green-400/20 text-green-400 font-semibold py-2 px-5 rounded-lg transition duration-150">
+                        Lihat Detail
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    
+    <!-- Area Notifikasi Kustom (Pengganti Alert) -->
+    <div id="customNotification" class="fixed bottom-5 right-5 bg-indigo-600 text-white p-4 rounded-lg shadow-xl transition-opacity duration-300 opacity-0 transform translate-y-4 pointer-events-none">
+        <!-- Teks notifikasi akan diisi oleh JavaScript -->
+        <p id="notificationText"></p>
+    </div>
+
+    <!-- Footer Branding -->
+    <footer class="mt-16 pt-6 border-t border-gray-700 text-center text-gray-400">
+        <p class="text-sm">
+            Dikembangkan oleh: <span class="font-bold text-indigo-400">Lia Marganing Rahayu</span> | Sumber Informasi Event Cirebon
+        </p>
+    </footer>
+
+    <!-- JavaScript untuk Menangani Interaksi (Mengganti window.alert) -->
+    <script>
+        /**
+         * Fungsi untuk menampilkan notifikasi kustom (menggantikan alert()).
+         * @param {string} message Pesan yang akan ditampilkan kepada pengguna.
+         */
+        function showAlert(message) {
+            const notification = document.getElementById('customNotification');
+            const textElement = document.getElementById('notificationText');
+            
+            // Mengisi pesan
+            textElement.textContent = message + ' sedang diproses...';
+            
+            // Menampilkan notifikasi
+            notification.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+            notification.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+
+            // Menyembunyikan notifikasi setelah 3 detik
+            setTimeout(() => {
+                notification.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                notification.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+            }, 3000);
+        }
+        
+        // Memastikan semua elemen dimuat sebelum menjalankan skrip
+        window.onload = function() {
+            console.log('Halaman Event Konser Cirebon siap!');
+        };
+    </script>
+</body>
+</html>
